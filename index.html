@@ -13,11 +13,27 @@
             <h1>Jeviteca</h1>
         </header>
 
+        <nav>
+
+        </nav>
+
+        <div ng-controller="AlbumsPostCtrl">
+            <table class="table">
+                <tr ng-repeat="album in albums">
+                    <td><img ng-src="images/{{ album.image }}" width="30"></td>
+                    <td>{{ album.title }}</td>
+                    <td>{{ album.year }}</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 
     <!-- Angular.JS Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <!-- App.js -->
     <script src="scripts/app.js"></script>
+
+    <script src="scripts/controllers/AlbumsPosts.js"></script>
 </body>
 </html>
