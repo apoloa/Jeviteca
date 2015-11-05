@@ -14,26 +14,28 @@
         </header>
 
         <nav>
-
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="#/albums">Albums</a></li>
+                <li role="presentation"><a href="#/bands">Bands</a></li>
+                <li role="presentation"><a href="#/genres">Genres</a></li>
+            </ul>
         </nav>
 
-        <div ng-controller="AlbumsPostCtrl">
-            <table class="table">
-                <tr ng-repeat="album in albums">
-                    <td><img ng-src="images/{{ album.image }}" width="30"></td>
-                    <td>{{ album.title }}</td>
-                    <td>{{ album.year }}</td>
-                </tr>
-            </table>
+        <div ng-view>
+
         </div>
 
     </div>
 
     <!-- Angular.JS Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <!-- Angular Route Library -->
+    <script src="vendor/angular-route.js"></script>
     <!-- App.js -->
     <script src="scripts/app.js"></script>
-
-    <script src="scripts/controllers/AlbumsPosts.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/Albums.js"></script>
+    <script src="scripts/controllers/Bands.js"></script>
+    <script src="scripts/controllers/Genres.js"></script>
 </body>
 </html>
