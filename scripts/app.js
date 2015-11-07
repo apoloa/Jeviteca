@@ -2,10 +2,20 @@
 angular.module("jeviteca", ["ngRoute"]);
 
 
+angular.module("jeviteca").config(function(AlbumsBackendProvider, Properties){
+    AlbumsBackendProvider.establishUrlAlbums(Properties.albumsUrl);
+});
+
+
 angular.module("jeviteca").config(function($routeProvider){
     $routeProvider.when("/albums",{
         controller: "AlbumsCtrl",
-        templateUrl: "views/Albums.html"
+        templateUrl: "views/Albums.html",
+        resolve: {
+            Albums: ["AlbumsBackend", function(AlbumsBackend){
+                return AlbumsBackend.getAllAlbums();
+            }]
+        }
     });
 
     $routeProvider.when("/bands",{

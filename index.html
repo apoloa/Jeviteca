@@ -4,38 +4,44 @@
     <meta charset="UTF-8">
     <title>Jeviteca</title>
     <!-- Bootstrap Library -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
 </head>
 <body ng-app="jeviteca">
-    <!-- Application container -- Responsive -->
-    <div class="container">
-        <header>
-            <h1>Jeviteca</h1>
-        </header>
+<!-- Application container -- Responsive -->
+<div class="container">
+    <header>
+        <h1>Jeviteca</h1>
+    </header>
 
-        <nav>
-            <ul class="nav nav-tabs">
-                <li role="presentation"><a href="#/albums">Albums</a></li>
-                <li role="presentation"><a href="#/bands">Bands</a></li>
-                <li role="presentation"><a href="#/genres">Genres</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="#/albums">Albums</a></li>
+            <li role="presentation"><a href="#/bands">Bands</a></li>
+            <li role="presentation"><a href="#/genres">Genres</a></li>
+        </ul>
+    </nav>
 
-        <div ng-view>
-
-        </div>
+    <div ng-view>
 
     </div>
 
-    <!-- Angular.JS Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <!-- Angular Route Library -->
-    <script src="vendor/angular-route.js"></script>
-    <!-- App.js -->
-    <script src="scripts/app.js"></script>
-    <!-- Controllers -->
-    <script src="scripts/controllers/Albums.js"></script>
-    <script src="scripts/controllers/Bands.js"></script>
-    <script src="scripts/controllers/Genres.js"></script>
+</div>
+
+<!-- Angular.JS Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<!-- Angular Route Library -->
+<script src="vendor/angular-route.js"></script>
+<!-- App.js -->
+<script src="scripts/app.js"></script>
+<!-- Constants -->
+<script src="scripts/constants/Properties.js"></script>
+<!-- Providers -->
+<script src="scripts/providers/AlbumsBackend.js"></script>
+<!-- Controllers -->
+<script src="scripts/controllers/Albums.js"></script>
+<script src="scripts/controllers/Bands.js"></script>
+<script src="scripts/controllers/Genres.js"></script>
 </body>
 </html>

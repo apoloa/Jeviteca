@@ -1,15 +1,7 @@
 // Controller with the collection of albums
 
-angular.module("jeviteca").controller("AlbumsCtrl", function($scope, $http){
-    $http.get("model/albums.json").then(
+angular.module("jeviteca").controller("AlbumsCtrl", function($scope, Albums) {
 
-        function(response){
-            $scope.albums = response.data;
-        },
-
-        function(error){
-            console.log(error);
-        }
-
-    );
+    // Saved albums in context
+    $scope.albums = Albums.data;
 });
