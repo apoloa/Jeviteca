@@ -3,7 +3,7 @@ angular.module("jeviteca").provider("AlbumsBackend", function() {
     var urlAlbums = "";
 
     return {
-        establishUrlAlbums: function(value) {
+        setUrlAlbums: function(value) {
             urlAlbums = value;
         },
 

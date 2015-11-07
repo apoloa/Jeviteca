@@ -1,15 +1,7 @@
 // Controler of Bands
 
-angular.module("jeviteca").controller("BandsCtrl", function($scope, $http){
-    $http.get("model/bands.json").then(
+angular.module("jeviteca").controller("BandsCtrl", function($scope, Bands) {
 
-        function(response){
-            $scope.bands = response.data;
-        },
-
-        function(error){
-            console.log(error);
-        }
-
-    );
+    // Saved albums in context
+    $scope.bands = Bands.data;
 });

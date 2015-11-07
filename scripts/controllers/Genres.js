@@ -1,15 +1,7 @@
 // Controller with the collection of generes
 
-angular.module("jeviteca").controller("GenresCtrl", function($scope, $http){
-    $http.get("model/genres.json").then(
+angular.module("jeviteca").controller("GenresCtrl", function($scope, Genres) {
 
-        function(response){
-            $scope.genres = response.data;
-        },
-
-        function(error){
-            console.log(error);
-        }
-
-    );
+    // Saved albums in context
+    $scope.genres = Genres.data;
 });
