@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
           integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
           crossorigin="anonymous">
+    <!-- Angular Loading Bar -->
+    <link rel="stylesheet" href="styles/loading-bar.min.css"/>
+    <link rel="stylesheet" href="styles/font-awesome.min.css"/>
 </head>
 <body ng-app="jeviteca">
 <!-- Application container -- Responsive -->
 <div class="container">
-    <header>
-        <h1>Jeviteca</h1>
-    </header>
+    <div class="navbar navbar-default">
 
-    <nav>
-        <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#/albums">Albums</a></li>
-            <li role="presentation"><a href="#/bands">Bands</a></li>
-            <li role="presentation"><a href="#/genres">Genres</a></li>
-        </ul>
-    </nav>
+        <header class="navbar-brand">
+            Jeviteca
+        </header>
+
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="#/albums">Albums</a></li>
+                <li role="presentation"><a href="#/bands">Bands</a></li>
+                <li role="presentation"><a href="#/genres">Genres</a></li>
+            </ul>
+        </nav>
+
+    </div>
 
     <div ng-view>
 
@@ -31,6 +38,10 @@
 
 <!-- Angular.JS Library -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<!-- Third Party Dependencies -->
+<script src="vendor/loading-bar.min.js"></script>
+<script src="vendor/ui-bootstrap-tpls-0.14.3.min.js"></script>
+<script src="vendor/angular-animate.min.js"></script>
 <!-- Angular Route Library -->
 <script src="vendor/angular-route.js"></script>
 <!-- App.js -->
@@ -45,5 +56,6 @@
 <script src="scripts/controllers/Albums.js"></script>
 <script src="scripts/controllers/Bands.js"></script>
 <script src="scripts/controllers/Genres.js"></script>
+<script src="scripts/controllers/AlbumsDetail.js"></script>
 </body>
 </html>

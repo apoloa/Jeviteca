@@ -1,5 +1,5 @@
 // Application Definition
-angular.module("jeviteca", ["ngRoute"]);
+angular.module("jeviteca", ["ngRoute", "angular-loading-bar","ngAnimate", "ui.bootstrap"]);
 
 
 angular.module("jeviteca").config(function(AlbumsBackendProvider, GenresBackendProvider,
