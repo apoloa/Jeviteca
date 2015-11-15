@@ -1,0 +1,26 @@
+<form class="form-inline">
+    <div class="form-group">
+        <label for="filterTitle">Album</label>
+        <input type="text" id="filterTitle" ng-model="filterForAlbum" />
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>Image</th>
+        <th ng-click="order('title')" ng-class="sort">
+            Title
+            <i  ng-show="orderBy === 'title'" ng-class="classReverse"></i>
+        </th>
+        <th ng-click="order('year')" ng-class="sort">
+            Year
+            <i  ng-show="orderBy === 'year'" ng-class="classReverse"></i>
+        </th>
+        <th>Love</th>
+    </tr>
+    <tr ng-repeat="album in albums | filter:{ title: filterForAlbum } |orderBy:orderBy:reverse"
+        ng-click="openModal(album)"
+        album-item
+        album="album">
+
+    </tr>
+</table>

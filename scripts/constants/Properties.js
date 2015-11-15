@@ -1,5 +1,4 @@
 // use the constants defines the properties of the application
-
 angular.module("jeviteca").constant("Properties", {
 
     albumsUrl: "model/albums.json",

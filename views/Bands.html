@@ -1,10 +1,29 @@
+<form class="form-inline">
+    <div class="form-group">
+        <label for="filterTitle">Band</label>
+        <input type="text" id="filterTitle" ng-model="filterForBand" />
+    </div>
+    <div class="form-group">
+        <label for="filterOrigin">Origin</label>
+        <input type="text" id="filterOrigin" ng-model="filterForOrigin" />
+    </div>
+</form>
 <table class="table">
     <tr>
-        <th>Name</th>
-        <th>Origin</th>
+        <th ng-click="order('name')" ng-class="sort">
+            Name
+            <i  ng-show="orderBy === 'name'" ng-class="classReverse"></i>
+        </th>
+        <th ng-click="order('origin')" ng-class="sort">
+            Origin
+            <i  ng-show="orderBy === 'origin'" ng-class="classReverse"></i>
+        </th>
+        <th>
+            Love
+        </th>
     </tr>
-    <tr ng-repeat="band in bands">
-        <td>{{ band.name }}</td>
-        <td>{{ band.origin }}</td>
-    </tr>
+    <tr ng-repeat="band in bands | filter:{ name: filterForBand, origin: filterForOrigin } |orderBy:orderBy:reverse"
+        ng-click="openModal(band)"
+        band-item
+        band="band">
 </table>

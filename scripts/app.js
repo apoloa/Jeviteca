@@ -4,6 +4,7 @@ angular.module("jeviteca", ["ngRoute", "angular-loading-bar","ngAnimate", "ui.bo
 
 angular.module("jeviteca").config(function(AlbumsBackendProvider, GenresBackendProvider,
                                            BandsBackendProvider, Properties) {
+
     AlbumsBackendProvider.setUrlAlbums(Properties.albumsUrl);
     GenresBackendProvider.setUrlGenres(Properties.genresUrl);
     BandsBackendProvider.setUrlBands(Properties.bandsUrl);

@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <title>Jeviteca</title>
     <!-- Bootstrap Library -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <!-- Angular Loading Bar -->
     <link rel="stylesheet" href="styles/loading-bar.min.css"/>
     <link rel="stylesheet" href="styles/font-awesome.min.css"/>
@@ -20,11 +18,11 @@
             Jeviteca
         </header>
 
-        <nav>
+        <nav ng-controller="NavigationBarCtrl">
             <ul class="nav navbar-nav navbar-right">
-                <li role="presentation"><a href="#/albums">Albums</a></li>
-                <li role="presentation"><a href="#/bands">Bands</a></li>
-                <li role="presentation"><a href="#/genres">Genres</a></li>
+                <li ng-class="{ 'active': routeAlbums() }" role="presentation"><a href="#/albums">Albums</a></li>
+                <li ng-class="{ 'active': routeBands() }" role="presentation"><a href="#/bands">Bands</a></li>
+                <li ng-class="{ 'active': routeGenres() }" role="presentation"><a href="#/genres">Genres</a></li>
             </ul>
         </nav>
 
@@ -37,7 +35,7 @@
 </div>
 
 <!-- Angular.JS Library -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="vendor/angular.min.js"></script>
 <!-- Third Party Dependencies -->
 <script src="vendor/loading-bar.min.js"></script>
 <script src="vendor/ui-bootstrap-tpls-0.14.3.min.js"></script>
@@ -48,14 +46,29 @@
 <script src="scripts/app.js"></script>
 <!-- Constants -->
 <script src="scripts/constants/Properties.js"></script>
+<!-- Directives -->
+<script src="scripts/directives/AlbumItem.js"></script>
+<script src="scripts/directives/AlbumTable.js"></script>
+<script src="scripts/directives/BandItem.js"></script>
+<script src="scripts/directives/GenreItem.js"></script>
+<!-- Factories -->
+<script src="scripts/factories/Wikipedia.js"></script>
+<script src="scripts/factories/Youtube.js"></script>
+<!-- Services -->
+<script src="scripts/services/LocalStorage.js"></script>
+<script src="scripts/services/Love.js"></script>
 <!-- Providers -->
 <script src="scripts/providers/AlbumsBackend.js"></script>
 <script src="scripts/providers/BandsBackend.js"></script>
-<script src="scripts/providers/GenresProvider.js"></script>
+<script src="scripts/providers/GenresBackend.js"></script>
+<script src="scripts/services/LocalStorage.js"></script>
 <!-- Controllers -->
+<script src="scripts/controllers/NavigationBar.js"></script>
 <script src="scripts/controllers/Albums.js"></script>
 <script src="scripts/controllers/Bands.js"></script>
 <script src="scripts/controllers/Genres.js"></script>
-<script src="scripts/controllers/AlbumsDetail.js"></script>
+<script src="scripts/controllers/AlbumDetail.js"></script>
+<script src="scripts/controllers/BandDetail.js"></script>
+<script src="scripts/controllers/GenreDetail.js"></script>
 </body>
 </html>

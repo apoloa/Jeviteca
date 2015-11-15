@@ -1,0 +1,23 @@
+<div class="modal-header modal-lg">
+    <h3 class="modal-title">{{ item.title }} - {{item.band.name}} <i ng-click="love()"
+                                                                     ng-class="iconLove"></i><i
+            ng-click="wikipedia()" class="fa fa-wikipedia-w"></i></h3>
+
+</div>
+<div class="modal-body modal-lg">
+    <img ng-src="images/{{ item.image }}">
+    {{ ::item.year}}
+    <table ng-show="item.tracklist">
+        <tr>
+            <th>Song</th>
+        </tr>
+        <tr ng-repeat="song in item.tracklist">
+            <td>{{::song}}</td>
+            <td><i ng-click="youtube(song)" class="fa fa-youtube-play"></i></td>
+        </tr>
+    </table>
+
+</div>
+<div class="modal-footer modal-lg">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Ok</button>
+</div>

@@ -1,18 +1,1 @@
-<table class="table">
-    <tr>
-        <th>Image</th>
-        <th ng-click="order('title')" ng-class="sort">
-            Title
-            <i  ng-class="classReverse"></i>
-        </th>
-        <th ng-click="order('year')" ng-class="sort">
-            Year
-            <span class="sortorder" ng-show="orderBy === 'year'" ng-class="{reverse:reverse}"></span>
-        </th>
-    </tr>
-    <tr ng-repeat="album in albums | orderBy:orderBy:reverse" ng-click="openModal(album)">
-        <td><img ng-src="images/{{ album.image }}" width="30"></td>
-        <td>{{ album.title }}</td>
-        <td>{{ album.year }}</td>
-    </tr>
-</table>
+<album-table albums="albums"></album-table>

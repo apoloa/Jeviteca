@@ -1,6 +1,19 @@
+<form class="form-inline">
+    <div class="form-group">
+        <label for="filterGenre">Name</label>
+        <input type="text" id="filterGenre" ng-model="filterForGenre" />
+    </div>
+</form>
 <table class="table">
-    <tr ng-repeat="genre in genres">
-        <td>{{ genre.name }}</td>
-        <td>{{ genre.album }}</td>
+    <tr>
+        <th ng-click="order('name')" ng-class="sort">Genre<i ng-show="orderBy === 'name'" ng-class="classReverse"></i></th>
+        <th>
+            Love
+        </th>
+    </tr>
+    <tr ng-repeat="genre in genres | filter:{ name: filterForGenre } | orderBy:orderBy:reverse"
+        ng-click="openModal(genre)"
+        genre-item
+        genre="genre">
     </tr>
 </table>

@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{ item.name }} - {{item.origin}} <i ng-click="love()" ng-class="iconLove"></i><i
+            ng-click="wikipedia()" class="fa fa-wikipedia-w"></i></h3>
+
+</div>
+<div class="modal-body">
+    <album-table albums="item.albums"></album-table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Ok</button>
+</div>
